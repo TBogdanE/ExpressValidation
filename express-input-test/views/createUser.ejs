@@ -10,8 +10,19 @@
     <form action="/create" method="POST">
       <label for="firstName">First Name: </label>
       <input type="text" name="firstName" id="firstName" required />
+
       <label for="lastName">Last Name: </label>
       <input type="text" name="lastName" id="lastName" required />
+
+      <label for="userMail">Mail: </label>
+      <input type="email" name="userMail" id="userMail" required />
+
+      <label for="userAge">Age: </label>
+      <input type="number" name="userAge" id="userAge" />
+
+      <label for="userBio">Bio: </label>
+      <input type="text" name="userBio" id="userBio" />
+
       <button type="submit">Submit</button>
     </form>
     <a href="/">Back to home</a>

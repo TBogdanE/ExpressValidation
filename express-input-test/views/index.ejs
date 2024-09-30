@@ -12,6 +12,8 @@
       <li>
         ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %>
       </li>
+      <li>Email: <%= user.userMail %>, Age: <%= user.userAge %></li>
+      <li>Bio: <%= user.userBio %></li>
       <a href="/<%= user.id %>/update">Update</a>
       <!-- This time we're sending a POST request to our route, so we need a form. -->
       <form

@@ -20,6 +20,14 @@
         value="<%= user.lastName %>"
         required
       />
+      <input
+        type="email"
+        name="userMail"
+        value="<%= user.userMail %>"
+        required
+      />
+      <input type="number" name="userAge" value="<%= user.userAge %>" />
+      <input type="text" name="userBio" value="<%= user.userBio %>" />
       <button type="submit">Update User</button>
     </form>
     <a href="/">Back to home</a>

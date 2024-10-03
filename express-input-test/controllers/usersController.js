@@ -73,8 +73,14 @@ exports.usersUpdatePost = [
         errors: errors.array(),
       });
     }
-    const { firstName, lastName } = req.body;
-    usersStorage.updateUser(req.params.id, { firstName, lastName });
+    const { firstName, lastName, userMail, userAge, userBio } = req.body;
+    usersStorage.updateUser(req.params.id, {
+      firstName,
+      lastName,
+      userMail,
+      userAge,
+      userBio,
+    });
     res.redirect("/");
   },
 ];

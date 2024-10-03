@@ -1,4 +1,4 @@
-// controllers/usersController.js
+/* usersController.js*/
 const usersStorage = require("../storages/usersStorage");
 const { body, validationResult } = require("express-validator");
 
@@ -89,4 +89,23 @@ exports.usersUpdatePost = [
 exports.usersDeletePost = (req, res) => {
   usersStorage.deleteUser(req.params.id);
   res.redirect("/");
+};
+
+// Render the search form or search results
+exports.userSearch = (req, res) => {
+  res.render("searchUser", { title: "Search User", users: null });
+};
+
+// Handle the search results
+exports.userDisplaySearch = (req, res) => {
+  const name = req.body.searchUser; // Get the name from the form submission
+  if (name) {
+    let foundUsers = usersStorage.searchUserByName(name); // Search for users by name
+    return res.render("searchUser", {
+      title: "Search User",
+      users: foundUsers,
+    });
+  }
+  // Render the search form if no name is provided
+  res.render("searchUser", { title: "Search User", users: null });
 };
